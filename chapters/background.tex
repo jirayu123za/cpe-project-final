@@ -110,6 +110,18 @@
     \qquad API ย่อมาจาก Application Programming Interface คือการเชื่อมต่อจากระบบหนึ่งไปยังอีกระบบหนึ่งเพื่อให้ซอฟต์แวร์
     ภายนอกเข้าถึงและอัพเดทข้อมูลนั้นๆได้ แต่ยังอยู่ภายในขอบเขตที่ถูกกําหนดไว้ กล่าวคือ API เป็นตัวกลางที่จะทําให้คอยรับคําสั่งต่างๆ 
     ประมวลผลและกระทําข้อมูลส่งกลับคืนไปยังคนสั่งโดยอัตโนมัติ \cite{RESTAPI}
+  \subsection{Microservices}
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=0.8\textwidth]{image/Background/Microservices.png}
+      \caption[Microservices]{Microservices concept}
+      \label{fig:microservices_pic}
+    \end{figure}
+    \FloatBarrier
+    \qquad Microservices เป็นสถาปัตยกรรมการพัฒนาซอฟต์แวร์ที่แบ่งระบบใหญ่ๆ ออกเป็นบริการเล็กๆ ที่สามารถพัฒนา
+    ทดสอบ และปรับใช้ได้อย่างอิสระ โดยแต่ละบริการจะมีฟังก์ชันการทำงานเฉพาะตัวและสามารถสื่อสารกันผ่าน API 
+    ได้อย่างมีประสิทธิภาพ \cite{Microservices}
+
   \subsection{Hexagonal Architecture}
     \begin{figure}[!h]
       \centering
