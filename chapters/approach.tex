@@ -5,8 +5,6 @@
 \fi
 }
 
-ในบทนี้จะกล่าวถึงหลักการ และการออกแบบระบบ
-
 \makeatletter
 
 % \renewcommand\section{\@startsection {section}{1}{\z@}%
@@ -19,79 +17,88 @@
 % \titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{}
 % \titlespacing*{\section}{0pt}{10ex}{0pt}
 
-\section{Alice in Wonderland}
+\section{สถาปัตยกรรมระบบ}
+  \qquad โครงงานนี้ได้ออกแบบสถาปัตยกรรมของระบบเป็นแบบ Microservices โดยบทนี้จะกล่าวถึง
+    โครงสร้างของระบบทั้งหมด และอธิบายถึงแต่ละส่วนของระบบ โดยระบบจะถูกแบ่งออกเป็นส่วนย่อยๆ 
+    แต่ละส่วนจะมีหน้าที่และความรับผิดชอบในการทำงานที่แตกต่างกัน
 
-\begin{figure}
-\begin{center}
-\includegraphics{800px-Briny_Beach.jpg}
-\end{center}
-\caption[Poem]{The Walrus and the Carpenter}
-\label{fig:walrus}
-\end{figure}
+    \begin{figure}[!ht]
+      \centering
+      \includegraphics[width=0.8\textwidth]{image/Approach/Architecture.png}
+      \caption[Architecture]{System Architecture}
+      \label{fig:architecture}
+    \end{figure}
+    \FloatBarrier
 
-\subsection{The Black Kitten}
-  One thing was certain, that the WHITE kitten had had nothing to
-do with it:---it was the black kitten's fault entirely~\cite{aiw}.  For the
-white kitten had been having its face washed by the old cat for
-the last quarter of an hour (and bearing it pretty well,
-considering); so you see that it COULDN'T have had any hand in
-the mischief.
+  จากรูปที่ 3.1 แสดงถึงสถาปัตยกรรมของระบบที่ถูกแบ่งออกเป็นส่วนย่อยๆ ดังนี้
+  \begin{enumerate}
+    \item \textbf{Frontend} 
+    \item \textbf{Reverse Proxy} 
+    \item \textbf{Backend} 
+    \item \textbf{OCR Service} 
+    \item \textbf{Database and Storage} 
+  \end{enumerate}
 
-  The way Dinah washed her children's faces was this:  first she
-held the poor thing down by its ear with one paw, and then with
-the other paw she rubbed its face all over, the wrong way,
-beginning at the nose:  and just now, as I said, she was hard at
-work on the white kitten, which was lying quite still and trying
-to purr---no doubt feeling that it was all meant for its good.
+\section{โครงสร้างฐานข้อมูล (Database Schema)}
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1\textwidth]{image/Approach/Database-Schema.png}
+    \caption[Database Schema]{Database Schema}
+    \label{fig:database_schema}
+  \end{figure}
+  \FloatBarrier
+  \qquad ฐานข้อมูลที่ใช้ในโครงงานนี้ คือ PostgreSQL โดยมีการออกแบบโครงสร้างฐานข้อมูล (Database Schema) เพื่อรองรับการทำงานของแพลตฟอร์มอย่างมีประสิทธิภาพ
+  โดยโครงสร้างฐานข้อมูลประกอบด้วยตารางหลักๆ ดังนี้
+  \begin{enumerate}
+    \item \textbf{Universities} ตารางสำหรับเก็บข้อมูลรายการมหาวิทยาลัย
+    \item \textbf{User Groups} ตารางสำหรับเก็บข้อมูลประเภทกลุ่มของผู้ใช้งานในแพลตฟอร์ม
+    \item \textbf{Users} ตารางสำหรับเก็บข้อมูลต่างๆ ของผู้ใช้งานในแพลตฟอร์ม
+    \item \textbf{Courses} ตารางสำหรับเก็บข้อมูลกระบวนวิชา
+    \item \textbf{Sections} ตารางสำหรับเก็บข้อมูลลำดับตอนภายในกระบวนวิชา
+    \item \textbf{Enrollment lists} ตารางสำหรับเก็บข้อมูลการลงทะเบียนของผู้ใช้งานในกระบวนวิชา
+    \item \textbf{Personal Data} ตารางสำหรับเก็บข้อมูลของผู้ใช้งานในกระบวนวิชาที่ได้ลงทะเบียน
+    \item \textbf{Assignments} ตารางสำหรับเก็บข้อมูลการมอบหมายงาน
+    \item \textbf{Assignment Files} ตารางสำหรับเก็บข้อมูลไฟล์การมอบหมายงาน
+    \item \textbf{Assignment Sections} ตารางสำหรับเก็บข้อมูลลำดับตอนภายในการมอบหมายงาน
+    \item \textbf{Export Grades} ตารางสำหรับเก็บข้อมูลการส่งออกเกรด
+    \item \textbf{Rubrics} ตารางสำหรับเก็บข้อมูลเกณฑ์การประเมินของใบงาน
+    \item \textbf{Bounding Boxes} ตารางสำหรับเก็บข้อมูลกรอบของแต่ละใบงาน
+    \item \textbf{Submissions} ตารางสำหรับเก็บข้อมูลการส่งใบงาน หรืออัพโหลดใบงาน
+    \item \textbf{Submission Boxes} ตารางสำหรับเก็บข้อมูลกล่องของแต่ใบงาน ที่ใช้ในการทำ Optical Character Recognition (OCR)
+    \item \textbf{Uploads} ตารางสำหรับเก็บข้อมูลการอัปโหลดไฟล์ใบงาน
+    \item \textbf{Grades} ตารางสำหรับเก็บข้อมูลการให้คะแนน
+  \end{enumerate}
 
-  But the black kitten had been finished with earlier in the
-afternoon, and so, while Alice was sitting curled up in a corner
-of the great arm-chair, half talking to herself and half asleep,
-the kitten had been having a grand game of romps with the ball of
-worsted Alice had been trying to wind up, and had been rolling it
-up and down till it had all come undone again; and there it was,
-spread over the hearth-rug, all knots and tangles, with the
-kitten running after its own tail in the middle.
+\section{โครงสร้างระบบจัดเก็บข้อมูลแบบอ็อบเจ็กต์ (Object Storage)}
+  \qquad โครงสร้างระบบจัดเก็บข้อมูลแบบอ็อบเจ็กต์ (Object Storage) ที่ใช้ในโครงงานนี้ คือ MinIO โดยมีการออกแบบโครงสร้างเพื่อรองรับการจัดเก็บไฟล์ต่างๆ
+  ที่เกี่ยวข้องกับการทำงานของแพลตฟอร์ม โดยทางผู้พัฒนาได้ออกแบบไว้ในรูปแบบของ Bucket ดังนี้
+  \subsection{buckets} เป็นโครงสร้างหลักที่ใช้ในการจัดเก็บข้อมูลไฟล์ต่างๆ โดยในโครงงานนี้ได้สร้าง Bucket หลักๆ ดังนี้
+    \begin{enumerate}
+      \item 
+      \item 
+      \item 
+      \item 
+    \end{enumerate}
 
-\subsection{The Reproach}
+\section{Frontend}
+  \qquad Frontend เป็นส่วนที่ผู้ใช้จะโต้ตอบด้วยผ่านทางเว็บเบราว์เซอร์ โดยมีหน้าที่หลักในการแสดงผลข้อมูลและรับคำสั่งจากผู้ใช้
+  ซึ่งในโครงงานนี้ได้ใช้ Next.js เป็นเฟรมเวิร์กหลักในการพัฒนา และใช้ Tailwind CSS ร่วมกับ MantineUI ในการออกแบบส่วนติดต่อผู้ใช้ (User Interface)
 
-  `Oh, you wicked little thing!' cried Alice, catching up the
-kitten, and giving it a little kiss to make it understand that it
-was in disgrace.  `Really, Dinah ought to have taught you better
-manners!  You OUGHT, Dinah, you know you ought!' she added,
-looking reproachfully at the old cat, and speaking in as cross a
-voice as she could manage---and then she scrambled back into the
-arm-chair, taking the kitten and the worsted with her, and began
-winding up the ball again.  But she didn't get on very fast, as
-she was talking all the time, sometimes to the kitten, and
-sometimes to herself.  Kitty sat very demurely on her knee,
-pretending to watch the progress of the winding, and now and then
-putting out one paw and gently touching the ball, as if it would
-be glad to help, if it might.
-
-  `Do you know what to-morrow is, Kitty?' Alice began.  `You'd
-have guessed if you'd been up in the window with me---only Dinah
-was making you tidy, so you couldn't.  I was watching the boys
-getting in stick for the bonfire---and it wants plenty of
-sticks, Kitty!  Only it got so cold, and it snowed so, they had
-to leave off.  Never mind, Kitty, we'll go and see the bonfire
-to-morrow.'  Here Alice wound two or three turns of the worsted
-round the kitten's neck, just to see how it would look:  this led
-to a scramble, in which the ball rolled down upon the floor, and
-yards and yards of it got unwound again.
-
-  `Do you know, I was so angry, Kitty,' Alice went on as soon as
-they were comfortably settled again, `when I saw all the mischief
-you had been doing, I was very nearly opening the window, and
-putting you out into the snow!  And you'd have deserved it, you
-little mischievous darling!  What have you got to say for
-yourself?  Now don't interrupt me!' she went on, holding up one
-finger.  `I'm going to tell you all your faults.  Number one:
-you squeaked twice while Dinah was washing your face this
-morning.  Now you can't deny it, Kitty:  I heard you!  What that
-you say?' (pretending that the kitten was speaking.)  `Her paw
-went into your eye?  Well, that's YOUR fault, for keeping your
-eyes open---if you'd shut them tight up, it wouldn't have
-happened.  Now don't make any more excuses, but listen!  Number
-two:  you pulled Snowdrop away by the tail just as I had put down
-the saucer of milk before her!  What, you were thirsty, were you?
+  \section{การใช้งานพื้นฐาน}
+    \qquad แพลตฟอร์มนี้ถูกออกแบบมาให้มี User Interface สำหรับผู้ใช้งาน 2 ประเภท ได้แก่ ผู้สอน (Instructor) และนักศึกษา (Student) โดยแต่ละประเภทจะมีหน้าที่และการใช้งานที่แตกต่างกัน ดังนี้
+  \subsection{ผู้สอน (Instructor)}
+    \par\hspace*{3em} ผู้สอนมีหน้าที่ในการสร้างและจัดการ
+    \begin{enumerate}
+        \item 
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+  \subsection{นักศึกษา (Student)}
+    \par\hspace*{3em} นักศึกษามีหน้าที่ในการ
+    \begin{enumerate}
+        \item 
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
