@@ -1,4 +1,52 @@
 \chapter{คู่มือการติดตั้ง}
+\section{Next.js 14 (Frontend)}
+  \includegraphics[width=1\textwidth]{image/appendix/nextjs.png}
+  \qquad โครงสร้างของโปรเจกต์นี้ประกอบด้วยหลายไฟล์และโฟลเดอร์ที่สําคัญสําหรับการพัฒนาและการตั้งค่าโปรเจ
+กต์ โดยมีรายละเอียดดังนี้:
+  \subsection{Main Files and Folders}
+    \begin{enumerate}
+      \item .dockerignore: ไฟล์ที่ระบุไฟล์หรือโฟลเดอร์ที่ไม่ต้องการให้Docker คัดลอกไปยัง image
+      \item .env ไฟล์ที่ใช้เก็บค่าตัวแปรสภาพแวดล้อม (environment variables)สําหรับการตั้งค่าโปรเจกต์ในสภาพแวดล้อมต่างๆ
+      \item .eslintrc.json: ไฟล์การตั้งค่า ESLint สําหรับการตรวจสอบและจัดรูปแบบโค้ด
+      \item .gitignore: ไฟล์ที่ระบุไฟล์หรือโฟลเดอร์ที่ไม่ต้องการให้Git ติดตาม
+      \item docker-compose.yml: ไฟล์การตั้งค่า Docker Compose สําหรับการจัดการ container
+หลายๆ ตัว
+      \item Dockerfile: ไฟล์การตั้งค่า Docker สําหรับการสร้าง Docker image
+      \item next-env.d.ts: ไฟล์การตั้งค่า TypeScript สําหรับโปรเจกต์Next.js
+      \item next.config.mjs: ไฟล์การตั้งค่า Next.js
+      \item package.json: ไฟล์ที่เก็บข้อมูลเกี่ยวกับโปรเจกต์Node.js รวมถึง dependencies และสคริปต์
+ต่างๆ
+      \item postcss.config.mjs: ไฟล์การตั้งค่า PostCSS
+      \item README.md: ไฟล์เอกสารสําหรับโปรเจกต
+      \item tailwind.config.ts: ไฟล์การตั้งค่า Tailwind CSS
+      \item tsconfig.json: ไฟล์การตั้งค่า TypeScript
+    \end{enumerate}
+
+    \subsection{Subfolders}
+    \begin{enumerate}
+       \item .next: โฟลเดอร์ที่เก็บไฟล์ที่ถูกสร้างขึ้นโดย Next.js หลังจากการ build
+       \item app: โฟลเดอร์ที่เก็บไฟล์และโฟลเดอร์ที่เกี่ยวข้องกับการทํางานของแอปพลิเคชัน
+       \item components: โฟลเดอร์ที่เก็บคอมโพเนนต์ต่างๆ ที่ใช้ในโปรเจกต์
+       \item hooks: โฟลเดอร์ที่เก็บ custom hooks 
+       \item store: โฟลเดอร์ที่เก็บ store
+       \item public: โฟลเดอร์ที่เก็บไฟล์สาธารณะ เช่น รูปภาพ
+    \end{enumerate}
+\section{Installation Guide}
+  \subsection{Clone the Project from GitHub}
+    \qquad git clone https://github.com/jirayu123za/cpe-project-final.git
+cd <repository-directory>
+  \subsection{Install Dependencies}
+    \qquad npm install
+  \subsection{Set up Environment Variables}
+    \qquad Create a .env file in the root directory and add the necessary environment variables as specified in the .env.example file.
+  \subsection{Run the Development Server}
+    \qquad npm run dev
+  \subsection{Build for Production}
+    \qquad npm run build
+  \subsection{Start the Production Server}
+    \qquad npm start
+  \subsection{Build Docker Image (Optional)}
+    \qquad npm start
 
 \section{Golang Project (Project service)}
   \qquad รูป
@@ -25,6 +73,10 @@
       \item
     \end{enumerate}
   
+
+
+
+
 
 Text for a section in the first appendix goes here.
 
