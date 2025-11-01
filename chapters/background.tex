@@ -158,9 +158,31 @@
     \end{enumerate}
     
   \subsection{Tailwind CSS}
-    \qquad ข้างบนเป็นรูป ตรงนี้เป็นคำอธิบาย อย่าลืมใส่แหล่งอ้างอิง \cite{Tailwind}
+      \begin{figure}[!h]
+      \centering
+      \includegraphics[width=0.6\textwidth]{image/Background/tailwind-overview.png}
+      \caption{ Tailwind CSS logo}
+      \label{fig:tailwind}
+    \end{figure}
+    \qquad Tailwind CSS คือเฟรมเวิร์ก CSS แบบ “utility-first” ที่ให้คลาสสไตล์สั้น ๆ ใช้แต่งองค์ประกอบหน้าเว็บได้อย่างรวดเร็ว โดยไม่จำเป็นต้องเขียนคลาสเฉพาะสำหรับปุ่ม/ตาราง ฯลฯ เอง เช่น การใช้ bg-yellow-200, font-bold, rounded-lg เพื่อกำหนดสีพื้นหลัง, ตัวหนา และมุมโค้งได้โดยตรงซึ่งมีประโยชน์หลายประการ เช่น \cite{Tailwind}
+     \begin{enumerate}
+      \item พัฒนาวิดเจ็ต/เลย์เอาต์ได้เร็ว เพราะใช้คลาสสั้นจาก Tailwind แทนเขียน CSS ใหม่ทั้งหมด
+      \item รองรับการออกแบบแบบ responsive และ state (hover, focus, dark mode) ได้ง่ายผ่านระบบ variants เช่น md:bg-yellow-400 หรือ hover:bg-blue-500
+    \end{enumerate}
+
   \subsection{MantineUI}
-    \qquad ข้างบนเป็นรูป ตรงนี้เป็นคำอธิบาย อย่าลืมใส่แหล่งอ้างอิง \cite{Mantine}
+  \begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.86\textwidth]{Image/Background/mantine.png}
+    \caption{Mantine logo}
+  \label{fig:mantine}
+  \end{figure}
+    \qquad Mantine UI เป็นไลบรารีคอมโพเนนต์ React ที่มีคอมโพเนนต์พร้อมใช้งานกว่า 120 แบบ (เช่น Button, Modal, Tabs, Table) และรองรับธีม แสง/มืด (Light/Dark) โดยออกแบบมาให้สร้างเว็บแอปได้เร็วขึ้น ซึ่งมีประโยชน์หลายประการ เช่น \cite{Mantine}
+ \begin{enumerate}
+      \item มีคอมโพเนนต์พร้อมใช้งานหลากหลาย ทำให้เราสามารถใช้คอมโพเนนต์สำเร็จรูปแทนการสร้างเองจากศูนย์
+      \item รองรับ custom styling และ integration กับ React Hooks เช่น useClipboard, useForm, useDisclosure ซึ่งช่วยจัดการโมดัล/สถานะ/อินเทอร์แอคชั่นได้ง่าย
+      \item รองรับธีมแบบ Dark/Light สลับได้อัตโนมัติ รวมถึงปรับแต่งธีม (สี ฟอนต์ เงา) ได้ง่าย
+    \end{enumerate}
 
   \subsection{App Router}
     \begin{figure}[!h]
