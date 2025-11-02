@@ -161,9 +161,10 @@
       \begin{figure}[!h]
       \centering
       \includegraphics[width=0.6\textwidth]{image/Background/tailwind-overview.png}
-      \caption{ Tailwind CSS logo}
+      \caption{Tailwind CSS logo}
       \label{fig:tailwind}
     \end{figure}
+    \FloatBarrier
     \qquad Tailwind CSS คือเฟรมเวิร์ก CSS แบบ “utility-first” ที่ให้คลาสสไตล์สั้น ๆ ใช้แต่งองค์ประกอบหน้าเว็บได้อย่างรวดเร็ว โดยไม่จำเป็นต้องเขียนคลาสเฉพาะสำหรับปุ่ม/ตาราง ฯลฯ เอง เช่น การใช้ bg-yellow-200, font-bold, rounded-lg เพื่อกำหนดสีพื้นหลัง, ตัวหนา และมุมโค้งได้โดยตรงซึ่งมีประโยชน์หลายประการ เช่น \cite{Tailwind}
      \begin{enumerate}
       \item พัฒนาวิดเจ็ต/เลย์เอาต์ได้เร็ว เพราะใช้คลาสสั้นจาก Tailwind แทนเขียน CSS ใหม่ทั้งหมด
@@ -171,14 +172,14 @@
     \end{enumerate}
 
   \subsection{MantineUI}
-  \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.86\textwidth]{Image/Background/mantine.png}
-    \caption{Mantine logo}
-  \label{fig:mantine}
-  \end{figure}
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=0.5\textwidth]{Image/Background/mantine.png}
+      \caption{Mantine logo}
+    \label{fig:mantine}
+    \end{figure}
     \qquad Mantine UI เป็นไลบรารีคอมโพเนนต์ React ที่มีคอมโพเนนต์พร้อมใช้งานกว่า 120 แบบ (เช่น Button, Modal, Tabs, Table) และรองรับธีม แสง/มืด (Light/Dark) โดยออกแบบมาให้สร้างเว็บแอปได้เร็วขึ้น ซึ่งมีประโยชน์หลายประการ เช่น \cite{Mantine}
- \begin{enumerate}
+    \begin{enumerate}
       \item มีคอมโพเนนต์พร้อมใช้งานหลากหลาย ทำให้เราสามารถใช้คอมโพเนนต์สำเร็จรูปแทนการสร้างเองจากศูนย์
       \item รองรับ custom styling และ integration กับ React Hooks เช่น useClipboard, useForm, useDisclosure ซึ่งช่วยจัดการโมดัล/สถานะ/อินเทอร์แอคชั่นได้ง่าย
       \item รองรับธีมแบบ Dark/Light สลับได้อัตโนมัติ รวมถึงปรับแต่งธีม (สี ฟอนต์ เงา) ได้ง่าย
@@ -224,6 +225,44 @@
     ซึ่งช่วยให้การประเมินเป็นไปอย่างมีมาตรฐานและเป็นธรรม Rubric มักประกอบด้วย
     รายละเอียดของเกณฑ์การประเมินในแต่ละระดับคะแนน เช่น ดีมาก ดี ปานกลาง และต้องปรับปรุง
     ซึ่งช่วยให้นักศึกษาเข้าใจถึงความคาดหวังและสามารถปรับปรุงผลงานของตนได้อย่างมีประสิทธิภาพ \cite{Rubric}
+
+  \subsection{Bounding Box}
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=0.6\textwidth]{image/Background/Bounding-box.png}
+      \caption[Bounding Box]{Bounding Box concept}
+      \label{fig:bounding_box_pic}
+    \end{figure}
+    \FloatBarrier
+    \qquad Bounding Box คือ กล่องสี่เหลี่ยมที่ใช้ในการระบุและล้อมรอบวัตถุในภาพหรือวิดีโอ
+    โดย Bounding Box จะถูกกำหนดด้วยพิกัดของมุมซ้ายบนและมุมขวาล่างของกล่อง โดยในโครงงานของพวกเรา
+    ได้ใช้งานในการกำหนดเป็นกล่องที่เก็บพิกัดของ ชื่อนักศึกษา รหัสนักศึกษา และคำถามของใบงานนั้นๆ รวมถึงพื้นที่
+    คำตอบของคำถาม \cite{BoundingBox}
+  
+  \subsection{Statistics}
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=0.6\textwidth]{image/Background/Statistic.png}
+      \caption[Statistics]{Statistics concept}
+      \label{fig:statistics_pic}
+    \end{figure}
+    \FloatBarrier
+    \qquad สถิติ (Statistics) คือ การรวบรวม การวิเคราะห์ การตีความ และการนำเสนอข้อมูลในรูปแบบที่มีความหมาย
+    เพื่อให้สามารถเข้าใจและสื่อสารข้อมูลได้อย่างมีประสิทธิภาพ สถิติมีบทบาทสำคัญในการตัดสินใจ การวิจัย และการวางแผน
+    โดยสถิติสามารถแบ่งออกเป็น 2 ประเภทหลัก ได้แก่ สถิติเชิงพรรณนา (Descriptive Statistics) ซึ่งใช้ในการสรุปและ
+    แสดงข้อมูลในรูปแบบต่างๆ และสถิติเชิงอนุมาน (Inferential Statistics) ซึ่งใช้ในการวิเคราะห์ข้อมูลเพื่อทำการทำนายหรือ
+    สรุปผลจากกลุ่มตัวอย่างไปยังประชากรทั้งหมด \cite{Statistics} โดยในโครงงานของพวกเราได้มีการใช้สถิติเชิงพรรณนา
+    (Descriptive Statistics) ในการวิเคราะห์ผลคะแนนของนักศึกษาในกระบวนวิชา ประกอบด้วยดังต่อไปนี้
+    \begin{enumerate}
+      \item ค่าเฉลี่ย (Mean): เป็นค่ากลางของชุดข้อมูลที่ได้จากการบวกค่าทั้งหมดแล้วหารด้วยจำนวนข้อมูล
+      \item ค่ามัธยฐาน (Median): เป็นค่ากลางที่แบ่งชุดข้อมูลออกเป็นสองส่วนเท่าๆ กัน โดยค่ามัธยฐานจะเป็นค่าที่อยู่ตรงกลางเมื่อข้อมูลถูกจัดเรียงตามลำดับ
+      \item ค่าส่วนเบี่ยงเบนมาตรฐาน (Standard Deviation): เป็นการวัดการกระจายตัวของข้อมูลรอบค่าเฉลี่ย ซึ่งบ่งบอกถึงความแปรปรวนของข้อมูลในชุดนั้น
+      \item ค่าต่ำสุด (Minimum) และค่าสูงสุด (Maximum): เป็นค่าที่น้อยที่สุดและมากที่สุดในชุดข้อมูล
+      \item ช่วงของข้อมูล (Range): เป็นความแตกต่างระหว่างค่าสูงสุดและค่าต่ำสุดในชุดข้อมูล
+      \item เปอร์เซ็นไทล์ (Percentiles): เป็นค่าที่แบ่งชุดข้อมูลออกเป็น 100 ส่วนเท่าๆ กัน เพื่อแสดงตำแหน่งของข้อมูลในชุดนั้น
+      \item การแจกแจงความถี่ (Frequency Distribution): เป็นการแสดงจำนวนครั้งที่แต่ละค่าหรือช่วงของค่าปรากฏในชุดข้อมูล
+      \item ฮิสโตแกรม (Histogram): เป็นกราฟที่แสดงการแจกแจงความถี่ของข้อมูลในรูปแบบของแท่งกราฟ
+    \end{enumerate}
 
 \section{Database System}
   \qquad ระบบฐานข้อมูล (Database System) หมายถึงโครงสร้างสารสนเทศที่ประกอบด้วย รายละเอียดของข้อมูลที่เกี่ยวข้องกัน
