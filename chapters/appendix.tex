@@ -1,21 +1,25 @@
 \chapter{คู่มือการติดตั้ง}
 \section{Next.js 14 (Frontend)}
-  \includegraphics[width=1\textwidth]{image/appendix/nextjs.png}
-  \qquad โครงสร้างของโปรเจกต์นี้ประกอบด้วยหลายไฟล์และโฟลเดอร์ที่สําคัญสําหรับการพัฒนาและการตั้งค่าโปรเจ
-กต์ โดยมีรายละเอียดดังนี้:
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{image/Appendix/nextjs.png}
+    \caption[Next.js 14]{Next.js 14 Framework}
+    \label{fig:nextjs_pic}
+  \end{figure}
+  \FloatBarrier
+  \qquad โครงสร้างของโปรเจกต์นี้ประกอบด้วยหลายไฟล์และโฟลเดอร์ที่สําคัญสําหรับการพัฒนาและการตั้งค่าโปรเจกต์
+  โดยมีรายละเอียดดังนี้
   \subsection{Main Files and Folders}
     \begin{enumerate}
       \item .dockerignore: ไฟล์ที่ระบุไฟล์หรือโฟลเดอร์ที่ไม่ต้องการให้Docker คัดลอกไปยัง image
-      \item .env ไฟล์ที่ใช้เก็บค่าตัวแปรสภาพแวดล้อม (environment variables)สําหรับการตั้งค่าโปรเจกต์ในสภาพแวดล้อมต่างๆ
+      \item .env ไฟล์ที่ใช้เก็บค่าตัวแปรสภาพแวดล้อม (environment variables) สําหรับการตั้งค่าโปรเจกต์ในสภาพแวดล้อมต่างๆ
       \item .eslintrc.json: ไฟล์การตั้งค่า ESLint สําหรับการตรวจสอบและจัดรูปแบบโค้ด
       \item .gitignore: ไฟล์ที่ระบุไฟล์หรือโฟลเดอร์ที่ไม่ต้องการให้Git ติดตาม
-      \item docker-compose.yml: ไฟล์การตั้งค่า Docker Compose สําหรับการจัดการ container
-หลายๆ ตัว
+      \item docker-compose.yml: ไฟล์การตั้งค่า Docker Compose สําหรับการจัดการ container หลายๆ ตัว
       \item Dockerfile: ไฟล์การตั้งค่า Docker สําหรับการสร้าง Docker image
       \item next-env.d.ts: ไฟล์การตั้งค่า TypeScript สําหรับโปรเจกต์Next.js
       \item next.config.mjs: ไฟล์การตั้งค่า Next.js
-      \item package.json: ไฟล์ที่เก็บข้อมูลเกี่ยวกับโปรเจกต์Node.js รวมถึง dependencies และสคริปต์
-ต่างๆ
+      \item package.json: ไฟล์ที่เก็บข้อมูลเกี่ยวกับโปรเจกต์Node.js รวมถึง dependencies และสคริปต์ต่างๆ
       \item postcss.config.mjs: ไฟล์การตั้งค่า PostCSS
       \item README.md: ไฟล์เอกสารสําหรับโปรเจกต
       \item tailwind.config.ts: ไฟล์การตั้งค่า Tailwind CSS
@@ -34,7 +38,7 @@
 \section{Installation Guide}
   \subsection{Clone the Project from GitHub}
     \qquad git clone https://github.com/jirayu123za/cpe-project-final.git
-cd <repository-directory>
+    cd <repository-directory>
   \subsection{Install Dependencies}
     \qquad npm install
   \subsection{Set up Environment Variables}
@@ -49,53 +53,55 @@ cd <repository-directory>
     \qquad npm start
 
 \section{Golang Project (Project service)}
-  \qquad รูป
+  \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{image/Appendix/Golang.png}
+    \caption[Golang]{Golang Project Structure}
+    \label{fig:golang_pic}
+  \end{figure}
+  \FloatBarrier
   \subsection{Project Structure}
     \qquad ในส่วนข้างล่างนี้เป็นโครงสร้างของโปรเจกต์ และโฟลเดอร์ต่างๆ ที่ใช้ในโปรเจกต์นี้
     \begin{enumerate}
-      \item 
-      \item 
-      \item 
-      \item
-      \item
-      \item
-      \item
+      \item /cmd: โฟลเดอร์ที่เก็บไฟล์หลักของแอปพลิเคชัน
+      \item /internal: โฟลเดอร์ที่เก็บโค้ดภายในของแอปพลิเคชัน
+      \item /config: โฟลเดอร์ที่เก็บไฟล์การตั้งค่าต่างๆ
+      \item /adapter: โฟลเดอร์ที่เก็บโค้ดที่เชื่อมต่อกับบริการภายนอก
+      \item /oauth: โฟลเดอร์ที่เก็บโค้ดที่เกี่ยวข้องกับการตรวจสอบสิทธิ์ OAuth 2.0
+      \item /response: โฟลเดอร์ที่เก็บโค้ดที่เกี่ยวข้องกับการสร้างและจัดการการตอบสนอง HTTP
+      \item /core: โฟลเดอร์ที่เก็บโค้ดหลักของแอปพลิเคชัน
+      \item /repositories: โฟลเดอร์ที่เก็บโค้ดที่เกี่ยวข้องกับการเข้าถึงฐานข้อมูล
+      \item /services: โฟลเดอร์ที่เก็บโค้ดที่เกี่ยวข้องกับลอจิกของแอปพลิเคชัน
+      \item /utils: โฟลเดอร์ที่เก็บโค้ดที่มีฟังก์ชันใช้ในการช่วยเหลือต่างๆ
+      \item /workers: โฟลเดอร์ที่เก็บโค้ดที่เกี่ยวข้องกับการประมวลผลแบบอะซิงโครนัส
+      \item /database: โฟลเดอร์ที่เก็บไฟล์ที่เกี่ยวข้องกับการตั้งค่าฐานข้อมูล
+      \item /models: โฟลเดอร์ที่เก็บโค้ดที่เกี่ยวข้องกับโมเดลข้อมูล
+      \item /routes: โฟลเดอร์ที่เก็บโค้ดที่เกี่ยวข้องกับการกำหนดเส้นทาง (routing) ของแอปพลิเคชัน
+      \item /storage: โฟลเดอร์ที่เก็บโค้ดที่เกี่ยวข้องกับการตั้งค่าการจัดเก็บข้อมูลแบบออบเจ็กต์
     \end{enumerate}
   \subsection{Installation}
     \qquad ในส่วนข้างล่างนี้เป็นขั้นตอนการติดตั้งโปรเจกต์นี้
-    \begin{enumerate}
-      \item 
-      \item 
-      \item 
-      \item
-      \item
-      \item
-      \item
+    \begin{enumerate}[label=\arabic*., leftmargin=*, itemsep=6pt]
+      \item \textbf{ติดตั้ง Go}\\
+            ดาวน์โหลดจาก \url{https://go.dev/doc/install}
+      \item \textbf{ติดตั้ง Dependencies}\\
+    \begin{lstlisting}
+    go mod tidy
+    \end{lstlisting}
+      \item \textbf{ตั้งค่าฐานข้อมูล}
+    \begin{itemize}[leftmargin=1.4em, itemsep=2pt]
+      \item ตรวจไฟล์ .env ให้ถูกต้อง
+      \item สตาร์ทฐานข้อมูล
+    \end{itemize}
+    \begin{lstlisting}
+    docker compose up -d
+    \end{lstlisting}
+      \item \textbf{รันโปรเจกต์}
+    \begin{lstlisting}
+    go run cmd/main.go
+    \end{lstlisting}
     \end{enumerate}
   
-
-
-
-
-
-Text for a section in the first appendix goes here.
-
-test ทดสอบฟอนต์ serif ภาษาไทย
-
-\textsf{test ทดสอบฟอนต์ sans serif ภาษาไทย}
-
-\verb+test ทดสอบฟอนต์ teletype ภาษาไทย+
-
-\texttt{test ทดสอบฟอนต์ teletype ภาษาไทย}
-
-\textbf{ตัวหนา serif ภาษาไทย \textsf{sans serif ภาษาไทย} \texttt{teletype ภาษาไทย}}
-
-\textit{ตัวเอียง serif ภาษาไทย \textsf{sans serif ภาษาไทย} \texttt{teletype ภาษาไทย}}
-
-\textbf{\textit{ตัวหนาเอียง serif ภาษาไทย \textsf{sans serif ภาษาไทย} \texttt{teletype ภาษาไทย}}}
-
-\url{https://www.example.com/test_ทดสอบ_url}
-
 \chapter{\ifenglish Manual\else คู่มือการใช้งานระบบ\fi}
   \qquad ข้างล่างนี้เป็นขั้นตอนการใช้งานระบบแพลตฟอร์มการตรวจใบงานแบบกระดาษ (Paper Grader) โดยแบ่งออกเป็น 2 ส่วนหลัก
   ได้แก่ ส่วนของ\textbf{ผู้สอน (Instructor)} และส่วนของ\textbf{นักเรียน (Student)}
