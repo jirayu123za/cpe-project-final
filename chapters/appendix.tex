@@ -109,23 +109,256 @@
   
 \section{ส่วนของผู้สอน (Instructor)}
     \begin{enumerate}
-      \item ทําการ Login เข้าสู่ระบบผ่าน CMU Account หรือ Google Account
+      \item ทําการ Login เข้าสู่ระบบผ่าน CMU Account หรือ Google Account 
    \begin{figure}[H]
       \centering
-      \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Assignment-management.png}
+      \includegraphics[width=0.4\textwidth]{Image/modal/login.png}
       \label{fig:instructor-login}
     \end{figure}
       \item เมื่อทําการ Login สําเร็จ จะเข้าสู่หน้า Course Overview ที่แสดงคอร์สที่เคยสร้างไว้แล้ว หรือ
-สามารถสร้างคอร์สใหม่
+สร้างคอร์สใหม่ผ่านปุ่ม "Create course"
   \begin{figure}[H]
       \centering
+      \includegraphics[width=0.8\textwidth]{Image/Approach/Screen/Course-overview.png}
+      \caption[courseoverview]{รูปภาพแสดงหน้า Course Overview เมื่อเข้ามาในระบบของผู้สอน}
+      \label{fig:instructor-courseoverview} 
+      \includegraphics[width=0.45\textwidth]{Image/modal/instructor-create-course.png}
+      \caption[createassignment]{รูปภาพแสดงการสร้าง Course ใหม่}
+      \label{fig:createassignment}
+      \end{figure}
+      \item หน้าการจัดการงานที่ได้หมอบหมาย (Assignment Management) โดยผู้สอนสามารถตั้งเวลาส่งงาน วันหมดเขต วันตัดรอบ ปล่อยเกรด และอื่นๆได้ 
+      \begin{figure}[H]
+      \centering
       \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Assignment-management.png}
-      \label{fig:instructor-courseoverview}
+      \caption[Assignment]{รูปภาพแสดงการหน้าการจัดการงานที่ได้หมอบหมาย (Assignment Management)}
+      \includegraphics[width=0.6\textwidth]{Image/modal/instructor-editassignment.png}
+      \caption[settingAssignment]{รูปภาพแสดงการตั้งค่างานที่มอบหมาย}
+      \includegraphics[width=0.6\textwidth]{Image/modal/instructor-settingtime.png}
+      \caption[settingtime]{รูปภาพแสดงการตั้งเวลาสำหรับงานที่มอบหมาย}
+      \end{figure}
+     \item หน้าการจัดการรายชื่อภายในคอร์ส (Roster) จะแสดงรายชื่อภายในคอร์ส
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Roster-management.png}
+  \caption{รูปภาพแสดงหน้าการจัดการรายชื่อ (Roster)}
+  \label{fig:roster-management}
+\end{figure}
+
+\begin{enumerate}
+  \item สามารถเพิ่มรายชื่อได้ 2 รูปแบบ โดยรูปแบบแรกเป็นการเพิ่มแบบ \textit{single user}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Image/modal/instructor-addsingle.png}
+    \caption{หน้าการเพิ่มรายชื่อรายบุคคลเข้าคอร์ส (Single)}
+    \label{fig:add-single}
+  \end{figure}
+
+  \item รูปแบบที่สองเป็นการเพิ่มจากไฟล์ โดยมีเทมเพลตให้เลือก 2 แบบ
+  (ไฟล์ Excel จากสำนักทะเบียน และไฟล์รูปแบบของแพลตฟอร์ม)
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/modal/instructor-addcsv01.png}
+    \caption{หน้าการเลือก template ในการอัปโหลดไฟล์ (File Import)}
+    \label{fig:add-file}
+  \end{figure}
+  \renewcommand{\labelenumii}{(\roman{enumii})}
+    \begin{enumerate}
+      \item หลังจากเลือก template แล้ว จะเข้าสู่ขั้นตอนที่สอง คือขั้นตอนการอัปโหลดไฟล์รายชื่อนักศึกษา
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/modal/instructor-addcsv02.png}
+    \caption{หน้าการอัปโหลดไฟล์ template (File Import)}
+    \label{fig:add-file2}
     \end{figure}
-      \item 
-      \item
-      \item
-      \item
-      \item
+    \item หลังจากอัปโหลดไฟล์แล้ว จะเข้าสู่ขั้นตอนที่สาม คือขั้นตอนการจับคู่คอลัมน์ของไฟล์ที่อัปโหลดเข้ากับตารางในแพลตฟอร์ม
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/modal/instructor-addcsv03.png}
+    \caption{หน้าการจับคู่คอลัมน์ (File Import)}
+    \label{fig:add-file3}
+    \end{figure}
+    \end{enumerate}
+\end{enumerate}
+
+      \item Edit Outline เมื่อทำการสร้างงานที่ได้หมอบหมาย (Assignments) แล้วสามารถเข้าไปที่งานที่ได้หมอบหมาย (Assignments) เพื่อสร้างแม่แบบคำถาม (Bounding box) และสร้างเกณฑ์การให้คะแนน (Rubric) เพื่อใช้ในการตรวจ
+       \renewcommand{\labelenumii}{(\roman{enumii})}
+    \begin{enumerate}
+      \item หน้าการสร้างแม่แบบคำถาม (Bounding box) ที่เอาไว้ใช้ในตอนตรวจงานที่ได้มอบหมายของนักศึกษา
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Edit-outline.png}
+    \caption{หน้าการสร้างแม่แบบคำถาม (Bounding box)}
+    \label{fig:Bounding box}
+    \end{figure}
+    \item หลังจากการสร้างแม่แบบคำถามเสร็จแล้ว ส่วนต่อไปจะเป็นการสร้างเกณฑ์การให้คะแนน (Rubric) ของคำถามแต่ละข้อ
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Edit-rubric.png}
+    \caption{หน้าการสร้างแม่แบบคำถามจับคู่คอลัมน์ (Rubric)}
+    \label{fig:Rubric}
+    \end{figure}
+    \end{enumerate}
+      \item Management submission เป็นหน้าการจัดอัปโหลดไฟล์ของนักศึกษาเมื่องานที่ได้มอบหมายถูกตั้งแบบอาจารย์เป็นผู้ส่ง 
+         \renewcommand{\labelenumii}{(\roman{enumii})}
+    \begin{enumerate}
+      \item ขั้นตอนแรกจะเป็นการอัปโหลดไฟล์ที่รวมใบงานของนักศึกษาไว้ในไฟล์เดียว โดยทางระบบจะทำการแยกไฟล์ให้โดยอัตโนมัติ
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Manage-submission.png}
+    \caption{หน้าการอัปโหลดไฟล์ (Manage-submission)}
+    \label{fig:Manage-submission}
+    \end{figure}
+    \item ขั้นตอนที่สองหลังจากอัปโหลดไฟล์แล้วจะเป็นการจับคู่ไฟล์กับรายชื่อนักศึกษาภายในคอร์ส โดยสามารถใช้ระบบ OCR ที่จะจับคู่ให้อัตโนมัติ หรือจะจับคู่เอง 
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Manage-submission2.png}
+    \caption{หน้าการจับคู่ไฟล์กับรายชื่อนักศึกษา (Manage-submission)}
+    \label{fig:Manage-submission2}
+    \end{figure}
+    \end{enumerate}
+      \item Grade Submission รายชื่อนักศึกษาและ คำถาม เพื่อเลือกเข้าไปตรวจให้คะแนน
+      \begin{enumerate}
+  \item ส่วนแรกที่เข้ามาจะเป็นแสดงรายชื่อนักศึกษา 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Grade-submission.png}
+    \caption{หน้าการแสดงรายชื่อนักศึกษา (Grade-submission)}
+    \label{fig:Grade-submission}
+  \end{figure}
+    \begin{itemize}
+    \item สามารถคลิ๊กเพื่อเข้าได้ดูไฟล์ที่นักศึกษาคนนั้นๆ ส่งมาได้
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Grade-submission2.png}
+    \caption{หน้าแสดงไฟล์ของนักศึกษา (Grade submission review)}
+    \label{fig:Grade-submission-review}
+  \end{figure}
+  \end{itemize}
+
+  \item ส่วนที่สองจะแสดงเป็นคำถามโดยสามารถกดเลือกที่คำถามเพื่อเข้าไปตรวจหรือกดเลือกที่ submission เพิ่อเลือก submission ที่จะเข้าไปตรวจ 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Grade-submission-question.png}
+    \caption{หน้าการเลือกคำถามเพื่อเข้าไปตรวจ (Grade submission question)}
+    \label{fig:Grade-submission-question}
+  \end{figure}
+    \begin{itemize}
+    \item สามารถกดเลิอกที่ submission เพิ่มเปิดหน้าเลือก submission ที่จะเข้าไปตรวจได้
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Grade-submission-question-sub.png}
+    \caption{หน้าแสดงรายชื่อของนักศึกษา (Grade question submission )}
+    \label{fig:Grade-submission-question-sub}
+  \end{figure}
+\end{itemize}
+  \item หลังจากกดเลือกคำถามหรือ submission ที่ต้องการจะตรวจแล้วจะมาสู่หน้าการตรวจ โดยหน้าการตรวจนั้น สามารถแก้ไขเกณฑ์การให้คะแนน (Rubric) และสามารถใช้ปุ่มลัด (Shotcut key) เลข 1-9 เพิ่อใช้ในการเลือกเกณฑ์การให้คะแนน (Rubric) อีกทั้งยังสามารถ ใช้ ลูกศรขึ้นหรือลงในการเปลี่ยนคำถาม และยังสามารถใช้ลูกศรซ้ายหรือขวาในการเปลี่ยน submission ได้
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Grade.png}
+    \caption{หน้าการตรวจให้คะแนน (Grade)}
+    \label{fig:Grade}
+  \end{figure}
+   \end{enumerate} 
+      \item Review Grade เป็นหน้าที่จะแสดงข้อมูลสถิติของงานที่ได้มอบหมาย  นั้นๆ เป็นกราฟที่สามารถปรับ No. of bin ได้ และในส่วนล่างเป็นตารางรายชื่อของนักศึกษา แสดงคะแนน พร้อมสถานะ ต่างๆ
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Review-grade.png}
+    \caption{หน้าการแสดงสถิติ (Review grade)}
+    \label{fig:Review grade}
+    \end{figure}
+      \item Statistic เป็นหน้าที่จะแสดงข้อมูลสถิติของงานที่ได้มอบหมาย สามารถกดเลิอกที่งานที่ได้มอบหมายเพื่อเลือกดูสถิติของงานที่ได้มอบหมายต่างๆ ใน Course ได้ และยังสามารถเลือก section เพื่อดูสถิติได้สามารถเลือกดูของ section นั้นๆ หรือสามารถดูของหลายๆ section พร้อมกันได้ และในส่วนด้านล่างจะเป็นตารางแสดงคำถาม สามารถกดเลือกเพื่อดู สถิติของเกณฑ์การให้คะแนน (Rubric) ได้
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Assignment-statistic.png}
+    \caption{หน้าการแสดงสถิติของงานที่ได้มอบหมาย (Assignment statistic)}
+    \label{fig:Assignment-statistic}
+    \begin{itemize}
+    \item สามารถกดเลิอกที่คำถาม เพิ่มเปิดหน้าต่างแสดงสถิติของเกณฑ์การให้คะแนน (Rubric)
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Image/modal/Rubric.png}
+    \caption{หน้าแสดงสถิติของเกณฑ์การให้คะแนน (Rubric statistic )}
+    \label{fig:Rubric statistic}
+    \end{figure}
+    \end{itemize}
+    \end{figure}
+    \item Data Export เป็นหน้าแสดงประวัติการ Export ไฟล์สามารถกด download ไฟล์หรือลบไฟล์ได้ อีกทั้งยังสามารถกดเลือกไฟล์ที่จะ export ข้อมูลไปไฟล์ excel เพื่อนำไปใช้ต่อได้
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Image/Approach/Screen/Export-grade.png}
+    \caption{หน้าการแสดงประวัติการ Export (Export grade)}
+    \label{fig:Export-grade}
+    \begin{itemize}
+    \item สามารถกดเลิอกที่ Export เพื่อเลือกงานที่ได้มอบหมาย ที่ต้องการ Export ได้
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Image/modal/instructor-export.png}
+    \caption{หน้าแสดงการเลือกงานที่ได้มอบหมายเพื่อ Export ( Export )}
+    \label{fig:instructor-export}
+    \end{figure}
+    \end{itemize}
+    \end{figure}
     \end{enumerate} 
-\section{ส่วนของนักเรียน (Student)}
+
+
+\section{ส่วนของนักศึกษา (Student)}
+\renewcommand{\labelenumii}{\theenumi.\arabic{enumii}}
+\begin{enumerate}
+  \item หน้า Dashboard แสดงให้เห็นถึงงานที่ได้รับหมอบหมายโดยเรียงจากงานที่ไกล้ครบกำหนดไปจนถึงงานที่ยังไกลวันครบกำหนด อีกทั้งยังสามารถดูงานที่ได้รับหมอบหมายที่เลยเวลาที่กำหนดได้ในแทบที่สอง
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.92\textwidth]{image/STD/std-dashboard.png}
+      \caption{หน้า Dashboard แสดงงานที่ได้รับหมอบหมายที่อยู่ภายในเวลาที่กำหนด (Dashboard )}
+      \label{fig:std-dashboard-1}
+    \end{figure}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.92\textwidth]{image/STD/std-dashboardover.png}
+      \caption{หน้า Dashboard แสดงงานที่ได้รับหมอบหมายมราเลยเวลาที่กำหนด(Dashboard )}
+      \label{fig:std-dashboard-2}
+    \end{figure}
+    \FloatBarrier
+
+   
+    \begin{enumerate}
+      \item หน้าการส่งงาน เมื่อคลิ๊กเลือกที่ icon จะสามารถดูไฟล์เพิ่มเติมที่อาจารย์ได้แนบมาพร้อมไฟล์ใบงาน และ นักศึกษาสามารถส่งงานได้
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.7\textwidth]{image/modal/std-submitwork.png}
+          \caption{หน้าการส่งงานของนักศึกษา}
+          \label{fig:std-submit}
+        \end{figure}
+        \FloatBarrier
+    \end{enumerate}
+
+ 
+  \item หน้า course overview เป็นหน้าแสดงรายการของคอร์สที่นักศึกษาอยู่ทั้งหมด
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.92\textwidth]{image/STD/std-courseoverview.png}
+      \caption{หน้า Course Overview ของนักศึกษา}
+      \label{fig:std-course-overview}
+    \end{figure}
+    \FloatBarrier
+  \item หน้า Course Assignmen เมื่อคลิ๊กเข้าไปในคอร์ส จะเป็นหน้าแสดงรายการงานที่ได้หมอบหมายภายในคอร์สนั้นๆ 
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.92\textwidth]{image/STD/std-coursedashboard.png}
+      \caption{หน้า Course Assignment ของนักศึกษา}
+      \label{fig:std-course-assignment}
+    \end{figure}
+    \FloatBarrier
+
+   
+    \begin{enumerate}
+      \item หน้า \textit{review assignment}
+        \begin{figure}[H]
+          \centering
+          \includegraphics[width=0.92\textwidth]{image/STD/std-reviewgrade.png}
+          \caption{หน้า Review Assignment ของนักศึกษา}
+          \label{fig:std-review-assignment}
+        \end{figure}
+        \FloatBarrier
+    \end{enumerate}
+
+\end{enumerate}
